@@ -9,7 +9,8 @@ services:
     environment:
       DB_USER: postgres
       DB_PWD: postgres
-      DB_HOST: biadb.c30ye00qszvr.sa-east-1.rds.amazonaws.com
+      #DB_HOST: biadb.c30ye00qszvr.sa-east-1.rds.amazonaws.com
+      DB_HOST: database
       DB_PORT: 5432
       ## NAO PRECISA NO BOOTCAMP DAQUI PRA BAIXO ##
       # DB_SECRET_NAME: 
@@ -32,7 +33,7 @@ services:
       - "POSTGRES_PASSWORD=postgres"
       - "POSTGRES_DB=bia"
     ports:
-      - 5433:5432
+      - 5432:5432
     volumes:
       - db:/var/lib/postgresql/data
 volumes:

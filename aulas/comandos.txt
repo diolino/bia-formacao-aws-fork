@@ -1,0 +1,127 @@
+git add: joga para staged (preparados para serem comitados)
+git branch
+git commit
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+git checkout -b mensagem (cria um branch)
+git checkout mensagem (sem "-b" muda para o brach)
+
+git remote add origin https://github.com/diolino/git-essentials.git (ligar com um repositório remoto)
+
+git branch -M main
+
+git push -u origin main
+
+git branch mensagem
+
+git push origin mensagem
+
+git checkout . : desfaz as mudanças
+
+git pull: puxa mudanças
+
+git merge: ...
+
+git push: ...
+
+
+Arquivos
+.gitignore : indica o que deve ser ignorado.
+
+FORK
+
+#################################################################
+#### Passo a passo (do clone ao primeiro push)
+
+1) git clone https://github.com/diolino/bia-formacao-aws-fork.git
+2) cd nome-do-repositorio
+
+3) Se já não tiver configurado a autenticação
+git config --global user.name "Seu Nome"
+git config --global user.email "seu-email@exemplo.com"
+
+4) Cria um arquivo para testar
+echo "# Meu Projeto" >> teste.txt
+
+5) Verifica o status 
+git status
+
+6) Adiciona o novo arquivo ao stage
+git add .
+
+
+7) Faz o commit no repositório logal
+git commit -m "Primeiro commit: adiciona estrutura inicial do projeto"
+
+8) Verifica se está conectado ao repostitório remoto
+git remote -v
+
+9) Faz o Push
+#Se o branch principal for main
+git push -u origin main
+#
+Se for master:
+git push -u origin master
+
+#################################################################
+### CRIANDO BRANCH
+
+1) Vewrifica o Brahc atual
+git branch
+2) Cria o novo branch
+git branch nome-do-branch
+
+3) Troca o branch 
+git checkout nome-do-branch
+
+Faça alterações, commits e push
+
+#################################################################
+### PULL REQUEST E MERGE
+1) Pela ionterface do GitHub (time)
+	- estudar depois
+
+2) Pelo repositório local (sozinho)
+- git checkout main (muda para o main)
+- git merge nome-do-branch (faz o merge)
+- git push origin main (faz o push)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

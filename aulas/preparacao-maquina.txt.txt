@@ -1,0 +1,74 @@
+- wsl -d Ubuntu-24.04
+
+Git
+--------------------------
+- # sudo apt-get install git
+Baixar a BIA
+- # git clone https://github.com/henrylle/bia
+
+--- Comandos Git
+	- git status
+	- git branch
+
+
+VS Code
+-----------------
+No Windows
+- Instalar extensão no VS Code Windows
+ - No WSL
+	- # code bia
+No Linux
+- baixa na loja ou apt-get
+
+GitHub
+--------------------
+- Instalar Extensão GitHub Pull Request no VS Code
+
+Docker
+--------------------
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository (Install using the apt repository)
+Dar permissão ao usuário para rodar docker sem sudo
+- # sudo groupadd docker
+- # sudo usermod -aG docker $USER
+- # newgrp docker
+
+Subia a BIA (entra no diretório bia).
+- docker compose up -d
+Criar tableas do banco
+- docker compose exec server bash -c 'npx sequelize db:migrate'
+
+Acessar a BIA
+http://localhost:3001/
+
+#Parar todos os contanieres
+docker stop $(docker ps -q)
+#Remover todos os containeres
+docker rm -f $(docker ps -aq)
+
+#Derrubar o que foi subido pelo compose
+docker compose down
+
+#Buildar um serviço específico
+docker compose build server (builda o service "server" presente no compose)
+
+
+
+Dbeaver
+---------------
+# sudo add-apt-repository ppa:serge-rider/dbeaver-ce
+# sudo apt update
+# sudo apt install dbeaver-ce
+
+NPM
+--------------------------
+
+sudo apt install nodejs npm
+
+
+
+
+
+
+
+
+
