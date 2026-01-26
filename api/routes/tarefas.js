@@ -1,7 +1,7 @@
 module.exports = (app) => {
   const controllerFactory = require("../controllers/tarefas");
   const controller = controllerFactory();
-  
+
   app.route("/api/tarefas")
     .get(async (req, res, next) => {
       try {
