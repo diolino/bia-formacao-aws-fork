@@ -1,6 +1,20 @@
+const os = require('os'); 
+const fs = require('fs');
+
 module.exports = (app) => {
   const controllerFactory = require("../controllers/tarefas");
   const controller = controllerFactory();
+
+  app.route("/api/info") 
+    .get((req, res) => { 
+      const hostname = os.hostname(); 
+      let containerId = "unknown"; 
+      try { const cgroup = fs.readFileSync("/proc/self/cgroup", "utf8"); 
+        containerId = cgroup.split("\n")[0].split("/").pop(); 
+      } catch (err) {} 
+      const instanceId = Math.random().toString(36).substring(7); 
+      res.json({ hostname, containerId, instanceId }); 
+    });
 
   app.route("/api/tarefas")
     .get(async (req, res, next) => {
