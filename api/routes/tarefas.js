@@ -7,13 +7,21 @@ module.exports = (app) => {
 
   app.route("/api/info") 
     .get((req, res) => { 
-      const hostname = os.hostname(); 
-      let containerId = "unknown"; 
+      
       try { const cgroup = fs.readFileSync("/proc/self/cgroup", "utf8"); 
+        const hostname = os.hostname(); 
+        let containerId = "unknown"; 
         containerId = cgroup.split("\n")[0].split("/").pop(); 
-      } catch (err) {} 
-      const instanceId = Math.random().toString(36).substring(7); 
-      res.json({ hostname, containerId, instanceId }); 
+        const instanceId = Math.random().toString(36).substring(7); 
+        res.json({ hostname, containerId, instanceId }); 
+      } catch (err) {
+        res.status(500).send({ 
+          message: "Erro ao obter informações do contêiner." ,
+          error: err.message, // mensagem simples stack: err.stack // opcional: detalhes do stack trace
+          stack: err.stack // opcional: detalhes do stack trace
+        });
+      } 
+     
     });
 
   app.route("/api/tarefas")
