@@ -7,7 +7,7 @@
         <mxCell id="j2VAEkBe_OrsoHoyysbH-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="VPC (DemoVPC)" vertex="1">
           <mxGeometry height="560" width="860" x="1610" y="260" as="geometry" />
         </mxCell>
-        <mxCell id="UnIsdGkdxcCME6ti0ngy-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="ECS Cluster" vertex="1">
+        <mxCell id="UnIsdGkdxcCME6ti0ngy-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="ECS Cluster (bia-ecs-cluster-v2)" vertex="1">
           <mxGeometry height="300" width="810" x="1650" y="450" as="geometry" />
         </mxCell>
         <mxCell id="j2VAEkBe_OrsoHoyysbH-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;dashed=1;" value="Auto Scaling Group" vertex="1">
@@ -140,7 +140,7 @@
         <mxCell id="j2VAEkBe_OrsoHoyysbH-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="ALB (bia-alb)" vertex="1">
           <mxGeometry height="110" width="362" x="2030" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="j2VAEkBe_OrsoHoyysbH-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="- SG: http&lt;div&gt;- Subnet: DemoPublicSubnetA;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DemoPublicSubnetA&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="j2VAEkBe_OrsoHoyysbH-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="- SG: bia-alb (80, 443)&lt;div&gt;- Subnet: DemoPublicSubnetA;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DemoPublicSubnetA&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="292" x="2030" y="330" as="geometry" />
         </mxCell>
         <mxCell id="j2VAEkBe_OrsoHoyysbH-33" edge="1" parent="1" source="j2VAEkBe_OrsoHoyysbH-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.38;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="j2VAEkBe_OrsoHoyysbH-7">
@@ -159,6 +159,18 @@
               <mxPoint x="2280" y="900" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="j2VAEkBe_OrsoHoyysbH-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="&lt;b&gt;bia-ecs-cluster-v2&lt;/b&gt;&lt;div&gt;- t3.medium&lt;/div&gt;&lt;div&gt;- Ec2 Instance Role: create&lt;/div&gt;&lt;div&gt;- Capacity: min = 1. max = 2&lt;/div&gt;&lt;div&gt;- key pair: bia-kp&lt;/div&gt;&lt;div&gt;- VPC: DemoVPC&lt;/div&gt;&lt;div&gt;- DemoPublicSubnetA e B&lt;/div&gt;&lt;div&gt;- SG: default; bia-web; http&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="460" width="730" x="1700" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="j2VAEkBe_OrsoHoyysbH-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="&lt;b&gt;bia-ecs-cluster-v2&lt;/b&gt;&lt;div&gt;- t3.medium&lt;/div&gt;&lt;div&gt;- Ec2 Instance Role: create&lt;/div&gt;&lt;div&gt;- Capacity: min = 1. max = 2&lt;/div&gt;&lt;div&gt;- key pair: bia-kp&lt;/div&gt;&lt;div&gt;- VPC: DemoVPC&lt;/div&gt;&lt;div&gt;- DemoPublicSubnetA e B&lt;/div&gt;&lt;div&gt;- SG: default; bia-web; http&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="300" width="680" x="1720" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="j2VAEkBe_OrsoHoyysbH-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="&lt;b&gt;Task Definition (bia-td-v2)&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="190" x="1690" y="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="j2VAEkBe_OrsoHoyysbH-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" value="&lt;div&gt;&lt;b&gt;Service (&lt;/b&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;bia-ecs-service-v2&lt;/b&gt;&lt;/span&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="190" x="1914" y="1590" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
