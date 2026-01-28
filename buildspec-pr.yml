@@ -12,6 +12,7 @@ phases:
       - echo Instalando dependências do projeto NPM install ...
       - npm install --loglevel=error
       - echo Build do front-end com Vite
-      - cd client && VITE_API_URL=http://localhost:3001 npm run build      
+      - npm install --legacy-peer-deps --loglevel=error --prefix client
+      - VITE_API_URL=http://localhost:3001 npm run build --prefix client      
       - echo Testando...
       - npm test
