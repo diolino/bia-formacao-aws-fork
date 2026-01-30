@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Instalando dependências do Node e NPM...      
+      - curl -fsSL https://rpm.nodesource.com/setup_21.x | sudo bash -
+      - sudo yum install -y nodejs  
+  build:
+    commands:
+      - echo Build iniciado em `date`
+      - echo Instalando dependências do projeto NPM install ...
+      - npm install --loglevel=error
+      - echo Build do front-end com Vite
+      - npm install --legacy-peer-deps --loglevel=error --prefix client
+      - VITE_API_URL=http://localhost:3001 npm run build --prefix client
+      - codebuild-breakpoint      
+      - echo Testando...
+      - npm test
