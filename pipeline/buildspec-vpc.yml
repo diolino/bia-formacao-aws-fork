@@ -13,7 +13,10 @@ phases:
       - npm install --loglevel=error
       - echo Build do front-end com Vite
       - npm install --legacy-peer-deps --loglevel=error --prefix client
-      - VITE_API_URL=http://localhost:3001 npm run build --prefix client
-      - codebuild-breakpoint      
-      - echo Testando...
+      - VITE_API_URL=http://localhost:3001 npm run build --prefix client         
+      - echo realizando testes unitários...
       - npm test
+      - echo criando tabelas no banco...
+      - npx sequelize db:migrate
+      #- echo parada para verificar...
+      #- codebuild-breakpoint   
